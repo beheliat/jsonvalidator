@@ -1,0 +1,422 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$ref": "#/definitions/object_07",
+	"definitions": {
+		"object_01": {
+			"type": "object",
+			"properties": {
+				"list": {
+					"type": "array",
+					"items": [
+						{
+							"type": "object",
+							"properties": {
+								"Taxes": {
+									"type": "number"
+								}
+							},
+							"additionalProperties": false
+						}
+					],
+					"additionalItems": false,
+					"additionalProperties": false
+				}
+			},
+			"required": [
+				"list"
+			],
+			"additionalProperties": false
+		},
+		"object_02": {
+			"title": "Discounts",
+			"type": "object",
+			"properties": {
+				"list": {
+					"title": "discount",
+					"type": "array",
+					"items": {
+						"title": "PromotionDiscount",
+						"type": "object",
+						"properties": {
+							"Condition": {
+								"type": "string"
+							},
+							"Value": {
+								"type": "number"
+							},
+							"Currency": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"Value",
+							"Currency"
+						],
+						"additionalProperties": false
+					}
+				}
+			},
+			"required": [
+				"list"
+			],
+			"additionalProperties": false
+		},
+		"object_03": {
+			"type": "object",
+			"properties": {
+				"InvoiceHeaderID": {
+					"type": "string"
+				},
+				"ItemQuantity": {
+					"type": "number"
+				},
+				"InvoiceLineNumber": {
+					"type": "string"
+				},
+				"DeliveryNumber": {
+					"type": "string"
+				},
+				"DeliveryItem": {
+					"type": "string"
+				},
+				"OrderItemNumber": {
+					"type": "string"
+				},
+				"OrderNumber": {
+					"type": "string"
+				},
+				"Taxes": {
+					"type": "number"
+				},
+				"BrandId": {
+					"type": "string"
+				},
+				"Material": {
+					"type": "string"
+				},
+				"Description": {
+					"type": "string"
+				},
+				"DiscountList": {
+					"$ref": "#/definitions/object_02"
+				},
+				"PromotionDiscount": {
+					"title": "PromotionDiscount",
+					"type": "object",
+					"properties": {
+						"Value": {
+							"type": "number"
+						},
+						"Currency": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"Value",
+						"Currency"
+					],
+					"additionalProperties": false
+				},
+				"TotalList": {
+					"type": "object",
+					"items": false,
+					"properties": {
+						"list": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"TotalValue": {
+										"type": "number"
+									},
+									"Currency": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"TotalValue",
+									"Currency"
+								],
+								"additionalProperties": false
+							}
+						}
+					},
+					"required": [
+						"list"
+					],
+					"additionalProperties": false
+				},
+				"Subtotal": {
+					"type": "number"
+				},
+				"MaterialGroup": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"InvoiceHeaderID",
+				"ItemQuantity",
+				"InvoiceLineNumber",
+				"DeliveryNumber",
+				"DeliveryItem",
+				"OrderItemNumber",
+				"OrderNumber",
+				"Taxes",
+				"BrandId",
+				"Material",
+				"Description",
+				"DiscountList",
+				"PromotionDiscount",
+				"TotalList",
+				"Subtotal",
+				"MaterialGroup"
+			],
+			"additionalProperties": false
+		},
+		"object_04": {
+			"title": "InvoiceLine",
+			"type": "object",
+			"properties": {
+				"Line": {
+					"$ref": "#/definitions/array_01"
+				}
+			},
+			"required": [
+				"Line"
+			],
+			"additionalProperties": false
+		},
+		"object_05": {
+			"type": "object",
+			"properties": {
+				"InvoiceNumber": {
+					"type": "string"
+				},
+				"InvoiceCreationDate": {
+					"type": "string",
+					"format": "date"
+				},
+				"BillingType": {
+					"type": "string"
+				},
+				"Incoterm": {
+					"type": "string"
+				},
+				"Incoterm2": {
+					"type": "string"
+				},
+				"TermsOfPayment": {
+					"type": "string"
+				},
+				"TotalNetValueEuro": {
+					"type": "number"
+				},
+				"InvoiceStatus": {
+					"type": "string"
+				},
+				"BillTo": {
+					"type": "object",
+					"properties": {
+						"PartnerFunction": {
+							"type": "string"
+						},
+						"CustomerCode": {
+							"type": "string"
+						},
+						"Name": {
+							"type": "string"
+						},
+						"Address": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"PartnerFunction",
+						"CustomerCode",
+						"Name",
+						"Address"
+					],
+					"additionalProperties": false
+				},
+				"SoldTo": {
+					"type": "object",
+					"properties": {
+						"PartnerFunction": {
+							"type": "string"
+						},
+						"CustomerCode": {
+							"type": "string"
+						},
+						"Name": {
+							"type": "string"
+						},
+						"Address": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"PartnerFunction",
+						"CustomerCode",
+						"Name",
+						"Address"
+					],
+					"additionalProperties": false
+				},
+				"Payer": {
+					"type": "object",
+					"properties": {
+						"PartnerFunction": {
+							"type": "string"
+						},
+						"CustomerCode": {
+							"type": "string"
+						},
+						"Name": {
+							"type": "string"
+						},
+						"Address": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"PartnerFunction",
+						"CustomerCode",
+						"Name",
+						"Address"
+					],
+					"additionalProperties": false
+				},
+				"Quantity": {
+					"type": "number"
+				},
+				"DeliveryNumberList": {
+					"type": "object",
+					"items": false,
+					"properties": {
+						"list": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"DeliveryNumber": {
+										"type": "string"
+									}
+								},
+								"additionalProperties": false
+							}
+						}
+					},
+					"additionalProperties": false
+				},
+				"TotalNetValue": {
+					"type": "number"
+				},
+				"Subtotal": {
+					"type": "number"
+				},
+				"Currency": {
+					"type": "string",
+					"minLength": 3,
+					"maxLength": 3,
+					"anyOf": [
+						{
+							"type": "string",
+							"maxLength": 0
+						},
+						{
+							"type": "string",
+							"maxLength": 3
+						}
+					]
+				},
+				"InvoiceLine": {
+					"$ref": "#/definitions/object_04"
+				},
+				"AccountingDocument": {
+					"type": "string"
+				},
+				"AccountingDate": {
+					"type": "string",
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date",
+							"items": false,
+							"additionalProperties": false
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"Taxes": {
+					"type": "number"
+				},
+				"CompanyCode": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"InvoiceNumber",
+				"InvoiceCreationDate",
+				"BillingType",
+				"Incoterm",
+				"Incoterm2",
+				"TermsOfPayment",
+				"TotalNetValueEuro",
+				"InvoiceStatus",
+				"BillTo",
+				"SoldTo",
+				"Payer",
+				"Quantity",
+				"DeliveryNumberList",
+				"TotalNetValue",
+				"Subtotal",
+				"Currency",
+				"InvoiceLine",
+				"AccountingDocument",
+				"AccountingDate",
+				"Taxes",
+				"CompanyCode"
+			],
+			"additionalProperties": false
+		},
+		"object_06": {
+			"title": "ns1:details_data",
+			"type": "object",
+			"properties": {
+				"InvoiceHeader": {
+					"title": "InvoiceHeader",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/object_05"
+					}
+				}
+			},
+			"required": [
+				"InvoiceHeader"
+			],
+			"additionalProperties": false
+		},
+		"object_07": {
+			"description": "JSON Schema generated by XMLSpy v2021 rel. 3 (x64) (http://www.altova.com)",
+			"type": "object",
+			"properties": {
+				"ns1:details_data": {
+					"$ref": "#/definitions/object_06"
+				}
+			},
+			"required": [
+				"ns1:details_data"
+			],
+			"additionalProperties": false
+		},
+		"array_01": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/object_03"
+			}
+		}
+	}
+}

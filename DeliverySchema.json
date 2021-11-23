@@ -1,0 +1,758 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$ref": "#/definitions/object_06",
+	"definitions": {
+		"object_01": {
+			"title": "ZSD_VAS_DELV",
+			"type": "object",
+			"properties": {
+				"line": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"VASServiceTypes": {
+								"type": "string"
+							},
+							"VASSubServices": {
+								"type": "string"
+							},
+							"ReferenceItem": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"VASServiceTypes",
+							"VASSubServices",
+							"ReferenceItem"
+						],
+						"additionalProperties": false
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+		"object_02": {
+			"type": "object",
+			"properties": {
+				"DeliveryNumber": {
+					"type": "string"
+				},
+				"DeliveryItem": {
+					"type": "string"
+				},
+				"OrderLineNumber": {
+					"type": "string"
+				},
+				"ItemQty": {
+					"type": "number"
+				},
+				"ItemNetValue": {
+					"type": "number"
+				},
+				"Material": {
+					"type": "string"
+				},
+				"Description": {
+					"type": "string"
+				},
+				"DeliveryQty": {
+					"type": "number"
+				},
+				"OrderNumber": {
+					"type": "string"
+				},
+				"InvoiceNumber": {
+					"type": "string"
+				},
+				"InvoiceDocumentIC": {
+					"type": "string"
+				},
+				"AccountingDocumentIC": {
+					"type": "string"
+				},
+				"InvoiceProformaNumber": {
+					"type": "string"
+				},
+				"InvoiceProformaNumberIC": {
+					"type": "string"
+				},
+				"InvoiceDate": {
+					"type": "string",
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date",
+							"items": false,
+							"additionalProperties": false
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"AccountingDocumentICDate": {
+					"type": "string",
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date",
+							"items": false,
+							"additionalProperties": false
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"EAN": {
+					"type": "string"
+				},
+				"UPC": {
+					"type": "string"
+				},
+				"MaterialGroup": {
+					"type": "string"
+				},
+				"PONumber": {
+					"type": "string"
+				},
+				"AccountingDocumentICYear": {
+					"type": "string"
+				},
+				"AccountingDocumentICCompany": {
+					"type": "string"
+				},
+				"AccountingDocument": {
+					"type": "string"
+				},
+				"AccountingDocumentDate": {
+					"type": "string",
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date",
+							"items": false,
+							"additionalProperties": false
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"AccountingDocumentYear": {
+					"type": "string"
+				},
+				"AccountingDocumentCompany": {
+					"type": "string"
+				},
+				"StorageLocation": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"MaterialGroup",
+				"PONumber",
+				"AccountingDocumentICYear",
+				"AccountingDocumentICCompany",
+				"AccountingDocument",
+				"AccountingDocumentDate",
+				"StorageLocation"
+			],
+			"additionalProperties": false
+		},
+		"object_03": {
+			"title": "DeliveryLine",
+			"type": "object",
+			"properties": {
+				"Line": {
+					"anyOf": [
+						{
+							"$ref": "#/definitions/array_03"
+						},
+						{
+							"$ref": "#/definitions/array_04"
+						},
+						{
+							"$ref": "#/definitions/array_05"
+						}
+					]
+				}
+			},
+			"required": [
+				"Line"
+			],
+			"additionalProperties": false
+		},
+		"object_04": {
+			"type": "object",
+			"properties": {
+				"DeliveryNumber": {
+					"type": "string"
+				},
+				"PODDate": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"ShipTo": {
+					"type": "object",
+					"properties": {
+						"PartnerFunction": {
+							"type": "string"
+						},
+						"CustomerCode": {
+							"type": "string"
+						},
+						"Name": {
+							"type": "string"
+						},
+						"Address": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"PartnerFunction",
+						"CustomerCode",
+						"Name",
+						"Address"
+					],
+					"additionalProperties": false
+				},
+				"FinalDestination": {
+					"type": "object",
+					"properties": {
+						"PartnerFunction": {
+							"type": "string"
+						},
+						"CustomerCode": {
+							"type": "string"
+						},
+						"Name": {
+							"type": "string"
+						},
+						"Address": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"PartnerFunction",
+						"CustomerCode",
+						"Name",
+						"Address"
+					],
+					"additionalProperties": false
+				},
+				"DeliveryBlock": {
+					"type": "string"
+				},
+				"DeliveryType": {
+					"type": "string"
+				},
+				"Plant": {
+					"type": "string"
+				},
+				"ShippingConditions": {
+					"type": "string"
+				},
+				"Incoterm1": {
+					"type": "string"
+				},
+				"Incoterm2": {
+					"type": "string"
+				},
+				"NumberOfPackages": {
+					"type": "number"
+				},
+				"TotalWeight": {
+					"type": "number"
+				},
+				"ActualPRGDate": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"PickPackTime": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "time"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"TotalVolum": {
+					"type": "number"
+				},
+				"DelvCreationTime": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "time"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"CreatedBy": {
+					"type": "string"
+				},
+				"OrderCombination": {
+					"type": "string"
+				},
+				"DeliveryCreationDate": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"PickingDate": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"GoodIssueDate": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"POD": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"TrasportationMethod": {
+					"type": "string"
+				},
+				"ETA": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"ETD": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"TransitTime": {
+					"type": "number"
+				},
+				"ForwardingAgent": {
+					"type": "string"
+				},
+				"SoldTo": {
+					"type": "object",
+					"properties": {
+						"PartnerFunction": {
+							"type": "string"
+						},
+						"CustomerCode": {
+							"type": "string",
+							"minLength": 10,
+							"maxLength": 10
+						},
+						"Name": {
+							"type": "string"
+						},
+						"Address": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"PartnerFunction",
+						"CustomerCode",
+						"Name",
+						"Address"
+					],
+					"additionalProperties": false
+				},
+				"ICInvoiceNumber": {
+					"type": "object",
+					"items": false,
+					"properties": {
+						"DocNumber": {
+							"type": "string"
+						},
+						"Value": {
+							"type": "number"
+						},
+						"Currency": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"DocNumber",
+						"Value",
+						"Currency"
+					],
+					"additionalProperties": false
+				},
+				"CustomerProformaInvoice": {
+					"type": "object",
+					"properties": {
+						"DocNumber": {
+							"type": "string"
+						},
+						"Value": {
+							"type": "number"
+						},
+						"Currency": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"DocNumber",
+						"Value",
+						"Currency"
+					],
+					"additionalProperties": false
+				},
+				"ICProformaInvoice": {
+					"type": "object",
+					"properties": {
+						"DocNumber": {
+							"type": "string"
+						},
+						"Value": {
+							"type": "number"
+						},
+						"Currency": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"DocNumber",
+						"Value",
+						"Currency"
+					],
+					"additionalProperties": false
+				},
+				"ZSD_VAS_DELV": {
+					"$ref": "#/definitions/object_01"
+				},
+				"TrackingNumberList": {
+					"type": "object",
+					"properties": {
+						"list": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"TrackingNumber": {
+										"type": "string"
+									},
+									"TrackingLink": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"TrackingNumber",
+									"TrackingLink"
+								],
+								"additionalProperties": false
+							}
+						}
+					},
+					"additionalProperties": false
+				},
+				"Quantity": {
+					"type": "number"
+				},
+				"BrandList": {
+					"$ref": "#/definitions/array_02"
+				},
+				"InvoiceNumberList": {
+					"type": "object",
+					"properties": {
+						"list": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"InvoiceNumber": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"InvoiceNumber"
+								],
+								"additionalProperties": false
+							}
+						}
+					},
+					"additionalProperties": false
+				},
+				"DeliveryLine": {
+					"type": "object",
+					"properties": {
+						"Line": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/object_02"
+							}
+						}
+					},
+					"additionalProperties": false
+				},
+				"PreferentialOrigin": {
+					"type": "string"
+				},
+				"StatusDecnetWhse": {
+					"type": "string"
+				},
+				"OutboundTrackingNumber": {
+					"type": "string"
+				},
+				"HandlingUnitList": {
+					"type": "object",
+					"properties": {
+						"list": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"Length": {
+										"type": "number"
+									},
+									"Width": {
+										"type": "number"
+									},
+									"Height": {
+										"type": "number"
+									},
+									"HandlingUnit": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"Length",
+									"Width",
+									"Height",
+									"HandlingUnit"
+								],
+								"additionalProperties": false
+							}
+						}
+					},
+					"required": [
+						"list"
+					],
+					"additionalProperties": false
+				},
+				"OverallStatus": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"DeliveryNumber",
+				"PODDate",
+				"ShipTo",
+				"FinalDestination",
+				"DeliveryBlock",
+				"DeliveryType",
+				"Plant",
+				"ShippingConditions",
+				"Incoterm1",
+				"Incoterm2",
+				"NumberOfPackages",
+				"TotalWeight",
+				"ActualPRGDate",
+				"PickPackTime",
+				"TotalVolum",
+				"DelvCreationTime",
+				"CreatedBy",
+				"OrderCombination",
+				"DeliveryCreationDate",
+				"PickingDate",
+				"GoodIssueDate",
+				"POD",
+				"TrasportationMethod",
+				"ETA",
+				"ETD",
+				"TransitTime",
+				"ForwardingAgent",
+				"SoldTo",
+				"ICInvoiceNumber",
+				"CustomerProformaInvoice",
+				"ICProformaInvoice",
+				"ZSD_VAS_DELV",
+				"Quantity",
+				"BrandList",
+				"PreferentialOrigin",
+				"StatusDecnetWhse",
+				"OutboundTrackingNumber",
+				"HandlingUnitList",
+				"OverallStatus"
+			],
+			"additionalProperties": false
+		},
+		"object_05": {
+			"title": "ns1:details_data",
+			"type": "object",
+			"properties": {
+				"DeliveryHeader": {
+					"title": "DeliveryHeader",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/object_04"
+					}
+				}
+			},
+			"required": [
+				"DeliveryHeader"
+			],
+			"additionalProperties": false
+		},
+		"object_06": {
+			"description": "JSON Schema generated by XMLSpy v2021 rel. 3 (x64) (http://www.altova.com)",
+			"type": "object",
+			"properties": {
+				"ns1:details_data": {
+					"$ref": "#/definitions/object_05"
+				}
+			},
+			"required": [
+				"ns1:details_data"
+			],
+			"additionalProperties": false
+		},
+		"array_01": {
+			"title": "line",
+			"description": "tuple type",
+			"type": "array",
+			"items": false
+		},
+		"array_02": {
+			"title": "BrandList",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"array_03": {
+			"type": "array",
+			"items": false
+		},
+		"array_04": {
+			"title": "Line",
+			"description": "tuple type",
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": [
+				{
+					"$ref": "#/definitions/object_02"
+				},
+				{
+					"$ref": "#/definitions/object_02"
+				}
+			],
+			"additionalItems": false
+		},
+		"array_05": {
+			"title": "Line",
+			"description": "tuple type",
+			"type": "array",
+			"minItems": 4,
+			"maxItems": 4,
+			"items": [
+				{
+					"$ref": "#/definitions/object_02"
+				},
+				{
+					"$ref": "#/definitions/object_02"
+				},
+				{
+					"$ref": "#/definitions/object_02"
+				},
+				{
+					"$ref": "#/definitions/object_02"
+				}
+			],
+			"additionalItems": false
+		}
+	}
+}

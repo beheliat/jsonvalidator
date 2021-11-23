@@ -1,0 +1,1282 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$ref": "#/definitions/object_10",
+	"definitions": {
+		"object_01": {
+			"type": "object",
+			"properties": {
+				"PartnerFunction": {
+					"type": "string"
+				},
+				"CustomerCode": {
+					"type": "string"
+				},
+				"Name": {
+					"type": "string"
+				},
+				"Address": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"PartnerFunction",
+				"CustomerCode",
+				"Name",
+				"Address"
+			],
+			"additionalProperties": false
+		},
+		"object_02": {
+			"title": "TotalQuantityPerBrands",
+			"type": "object",
+			"properties": {
+				"TotalQuantityPerBrand": {
+					"title": "TotalQuantityPerBrand",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"BrandId": {
+								"type": "string"
+							},
+							"Quantity": {
+								"type": "number"
+							}
+						},
+						"required": [
+							"Quantity"
+						],
+						"additionalProperties": false
+					}
+				}
+			},
+			"required": [
+				"TotalQuantityPerBrand"
+			],
+			"additionalProperties": false
+		},
+		"object_03": {
+			"title": "TotalQuantityPerCategories",
+			"type": "object",
+			"properties": {
+				"TotalQuantityPerCategory": {
+					"title": "TotalQuantityPerCategory",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"Category": {
+								"type": "string"
+							},
+							"Quantity": {
+								"type": "number"
+							}
+						},
+						"required": [
+							"Category",
+							"Quantity"
+						],
+						"additionalProperties": false
+					}
+				}
+			},
+			"required": [
+				"TotalQuantityPerCategory"
+			],
+			"additionalProperties": false
+		},
+		"object_04": {
+			"type": "object",
+			"additionalProperties": false
+		},
+		"object_05": {
+			"type": "object",
+			"additionalProperties": false
+		},
+		"object_06": {
+			"type": "object",
+			"properties": {
+				"OrderNumber": {
+					"type": "string"
+				},
+				"OrderLineNumber": {
+					"type": "string"
+				},
+				"HighLevelItem": {
+					"type": "string"
+				},
+				"PONumberLine": {
+					"type": "string"
+				},
+				"SerialNumber": {
+					"type": "string"
+				},
+				"ShipTo": {
+					"$ref": "#/definitions/object_01"
+				},
+				"FinalDestination": {
+					"$ref": "#/definitions/object_01"
+				},
+				"ForwardingAgent": {
+					"$ref": "#/definitions/object_01"
+				},
+				"ReasonForRejection": {
+					"type": "string"
+				},
+				"Plant": {
+					"type": "string"
+				},
+				"CustomerMaterialNumber": {
+					"type": "string"
+				},
+				"MaterialCode": {
+					"type": "string"
+				},
+				"Description": {
+					"type": "string"
+				},
+				"Quantity": {
+					"type": "number"
+				},
+				"NetValue": {
+					"type": "number"
+				},
+				"Currency": {
+					"type": "string",
+					"minLength": 3,
+					"maxLength": 4
+				},
+				"RelevantForBilling": {
+					"type": "string"
+				},
+				"ExchangeRate": {
+					"type": "number"
+				},
+				"Defect": {
+					"type": "string"
+				},
+				"SpecialProject": {
+					"type": "string"
+				},
+				"Promotion": {
+					"type": "string"
+				},
+				"SalesDeal": {
+					"type": "string"
+				},
+				"SRP": {
+					"type": "number"
+				},
+				"GrossPrice": {
+					"type": "number"
+				},
+				"ExpectedPrice": {
+					"type": "number"
+				},
+				"OriginalRDD": {
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"CustomerRDD": {
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"NetPrice": {
+					"type": "number"
+				},
+				"MaterialGroup4": {
+					"type": "string"
+				},
+				"MaterialGroup5": {
+					"type": "string"
+				},
+				"InternalPOItem": {
+					"type": "string"
+				},
+				"SparePartsDescription": {
+					"type": "string"
+				},
+				"PaymentTerm": {
+					"type": "string"
+				},
+				"Incoterm1": {
+					"type": "string"
+				},
+				"Incoterm2": {
+					"type": "string"
+				},
+				"YourReference": {
+					"type": "string"
+				},
+				"PricingDate": {
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"DeliveryBlock": {
+					"type": "string"
+				},
+				"FirstEstimatedConfirmedDate": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"MaxConfirmedDate": {
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"TotalConfirmedQty": {
+					"type": "number"
+				},
+				"OrderToBeDelivered": {
+					"type": "number"
+				},
+				"PromotionalName": {
+					"type": "string"
+				},
+				"DeliveryInfos": {
+					"type": "object",
+					"properties": {
+						"DeliveryInfo": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"items": false,
+								"properties": {
+									"DeliveryNumber": {
+										"type": "string"
+									},
+									"TrackingNumber": {
+										"type": "string"
+									},
+									"TrackingLink": {
+										"type": "string"
+									},
+									"CarrierCode": {
+										"type": "string"
+									},
+									"GoodIssueDate": {
+										"items": false,
+										"additionalProperties": false,
+										"anyOf": [
+											{
+												"type": "string",
+												"format": "date",
+												"items": false,
+												"additionalProperties": false
+											},
+											{
+												"type": "string",
+												"maxLength": 0
+											}
+										]
+									}
+								},
+								"required": [
+									"DeliveryNumber"
+								],
+								"additionalProperties": false
+							}
+						}
+					},
+					"additionalProperties": false
+				},
+				"OrderLineStatus": {
+					"type": "string",
+					"enum": [
+					    "ZSI0",
+						"ZSI1",
+						"ZSI2",
+						"ZSI3",
+						"ZSI4",
+						"ZSI5",
+						"ZSI6",
+						"ZSI7",
+						"ZSI8",
+						"ZSI9",
+						"ZSI10",
+						"ZSI11",
+						"ZSI12",
+						"ZSI13"
+					]
+				},
+				"OrderStatus": {
+					"type": "string"
+				},
+				"DeliveryStatus": {
+					"type": "string"
+				},
+				"OverallStatus": {
+					"type": "string"
+				},
+				"IncompleteLog": {
+					"type": "string"
+				},
+				"ScheduleLineChanges": {
+					"title": "ScheduleLineChanges",
+					"type": "object",
+					"properties": {
+						"line": {
+							"title": "line",
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"ScheduleLineChangeUser": {
+										"type": "string"
+									},
+									"ScheduleLineChangeChangeDate": {
+										"anyOf": [
+											{
+												"type": "string",
+												"format": "date"
+											},
+											{
+												"type": "string",
+												"maxLength": 0
+											}
+										]
+									},
+									"ScheduleLineChangeOldValue": {
+										"type": "string"
+									},
+									"ScheduleLineChangeNewValue": {
+										"type": "string"
+									},
+									"ScheduleLineChangeField": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"ScheduleLineChangeUser",
+									"ScheduleLineChangeChangeDate",
+									"ScheduleLineChangeOldValue",
+									"ScheduleLineChangeNewValue",
+									"ScheduleLineChangeField"
+								],
+								"additionalProperties": false
+							}
+						}
+					},
+					"required": [
+						"line"
+					],
+					"additionalProperties": false
+				},
+				"Discount": {
+					"title": "Discount",
+					"type": "object",
+					"properties": {
+						"PriceDiscountID": {
+							"type": "string"
+						},
+						"OrderLineNumber": {
+							"type": "string"
+						},
+						"SRPEuro5": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value",
+								"Currency"
+							],
+							"additionalProperties": false
+						},
+						"Index": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value"
+							],
+							"additionalProperties": false
+						},
+						"Markup": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value"
+							],
+							"additionalProperties": false
+						},
+						"ExchangeRate": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value"
+							],
+							"additionalProperties": false
+						},
+						"SRPBillingCurrency": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value"
+							],
+							"additionalProperties": false
+						},
+						"SRPLocalCurrency": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value"
+							],
+							"additionalProperties": false
+						},
+						"WHSGrossPrice": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value"
+							],
+							"additionalProperties": false
+						},
+						"WHSNetPrice": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value",
+								"Currency"
+							],
+							"additionalProperties": false
+						},
+						"CommercialDiscount": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value"
+							],
+							"additionalProperties": false
+						},
+						"PromotionalDiscount": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value"
+							],
+							"additionalProperties": false
+						},
+						"ExclusiveDiscount": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value"
+							],
+							"additionalProperties": false
+						},
+						"FlatNetPrice": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value"
+							],
+							"additionalProperties": false
+						},
+						"ManualDiscount": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value"
+							],
+							"additionalProperties": false
+						},
+						"B2BDiscount": {
+							"type": "object",
+							"properties": {
+								"Step": {
+									"type": "string"
+								},
+								"ConditionType": {
+									"type": "string"
+								},
+								"Value": {
+									"type": "number"
+								},
+								"Currency": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"Step",
+								"ConditionType",
+								"Value"
+							],
+							"additionalProperties": false
+						}
+					},
+					"required": [
+						"PriceDiscountID",
+						"OrderLineNumber",
+						"SRPEuro5",
+						"Index",
+						"Markup",
+						"ExchangeRate",
+						"SRPBillingCurrency",
+						"SRPLocalCurrency",
+						"WHSGrossPrice",
+						"WHSNetPrice",
+						"CommercialDiscount",
+						"PromotionalDiscount",
+						"ExclusiveDiscount",
+						"FlatNetPrice",
+						"ManualDiscount",
+						"B2BDiscount"
+					],
+					"additionalProperties": false
+				},
+				"GoodIssueDateList": {
+					"type": "object",
+					"properties": {
+						"list": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"ScheduleLineNumber": {
+										"type": "string"
+									},
+									"GoodIssueDate": {
+										"items": false,
+										"additionalProperties": false,
+										"anyOf": [
+											{
+												"type": "string",
+												"format": "date"
+											},
+											{
+												"type": "string",
+												"maxLength": 0
+											}
+										]
+									}
+								},
+								"required": [
+									"ScheduleLineNumber",
+									"GoodIssueDate"
+								],
+								"additionalProperties": false
+							}
+						}
+					},
+					"required": [
+						"list"
+					],
+					"additionalProperties": false
+				},
+				"TaxesList": {
+					"type": "object",
+					"properties": {
+						"MWST": {
+							"type": "number"
+						},
+						"USTax": {
+							"type": "number"
+						},
+						"ItalyLicense": {
+							"type": "number"
+						},
+						"Spain": {
+							"type": "number"
+						},
+						"FOCTaxes": {
+							"type": "number"
+						},
+						"DiscountTax": {
+							"type": "number"
+						},
+						"IndiaTax1": {
+							"type": "number"
+						},
+						"IndiaTax2": {
+							"type": "number"
+						},
+						"IndiaTax3": {
+							"type": "number"
+						},
+						"USTax2": {
+							"type": "number"
+						},
+						"USTax3": {
+							"type": "number"
+						},
+						"FranceLicense": {
+							"type": "number"
+						},
+						"InvoiceNoteTaxes": {
+							"type": "number"
+						}
+					},
+					"required": [
+						"MWST",
+						"USTax",
+						"ItalyLicense",
+						"Spain"
+					],
+					"additionalProperties": false
+				},
+				"AllocationStatus": {
+					"type": "string"
+				},
+				"FirstEstimatedConfDateConfQty": {
+					"type": "number"
+				},
+				"TotalLineDiscount": {
+					"type": "object",
+					"properties": {
+						"Value": {
+							"type": "number"
+						},
+						"Currency": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"Value",
+						"Currency"
+					],
+					"additionalProperties": false
+				},
+				"B2BDiscountName": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"OrderNumber",
+				"OrderLineNumber",
+				"HighLevelItem",
+				"PONumberLine",
+				"SerialNumber",
+				"ShipTo",
+				"FinalDestination",
+				"ForwardingAgent",
+				"ReasonForRejection",
+				"Plant",
+				"CustomerMaterialNumber",
+				"MaterialCode",
+				"Description",
+				"Quantity",
+				"NetValue",
+				"Currency",
+				"RelevantForBilling",
+				"ExchangeRate",
+				"Defect",
+				"SpecialProject",
+				"Promotion",
+				"SalesDeal",
+				"SRP",
+				"GrossPrice",
+				"ExpectedPrice",
+				"OriginalRDD",
+				"CustomerRDD",
+				"NetPrice",
+				"MaterialGroup4",
+				"MaterialGroup5",
+				"InternalPOItem",
+				"SparePartsDescription",
+				"PaymentTerm",
+				"Incoterm1",
+				"Incoterm2",
+				"YourReference",
+				"PricingDate",
+				"DeliveryBlock",
+				"FirstEstimatedConfirmedDate",
+				"MaxConfirmedDate",
+				"TotalConfirmedQty",
+				"OrderToBeDelivered",
+				"PromotionalName",
+				"OrderLineStatus",
+				"OrderStatus",
+				"DeliveryStatus",
+				"OverallStatus",
+				"IncompleteLog",
+				"ScheduleLineChanges",
+				"Discount",
+				"AllocationStatus",
+				"FirstEstimatedConfDateConfQty",
+				"TotalLineDiscount",
+				"B2BDiscountName"
+			],
+			"additionalProperties": false
+		},
+		"object_07": {
+			"title": "OrderLine",
+			"type": "object",
+			"properties": {
+				"Line": {
+					"title": "Line",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/object_06"
+					}
+				}
+			},
+			"required": [
+				"Line"
+			],
+			"additionalProperties": false
+		},
+		"object_08": {
+			"type": "object",
+			"properties": {
+				"OrderNumber": {
+					"type": "string"
+				},
+				"SalesOrg": {
+					"type": "string"
+				},
+				"DistrChannel": {
+					"type": "string"
+				},
+				"ShippingCondition": {
+					"type": "string"
+				},
+				"OrderReason": {
+					"type": "string"
+				},
+				"OrderType": {
+					"type": "string"
+				},
+				"POHeader": {
+					"type": "string"
+				},
+				"InternalPOHeader": {
+					"type": "string"
+				},
+				"ChannelAcquisitionType": {
+					"type": "string"
+				},
+				"OrderHeaderStatus": {
+					"type": "string",
+					"enum": [
+						"ZSH1",
+						"ZSH2",
+						"ZSH3",
+						"ZSH4",
+						"ZSH5"
+					]
+				},
+				"DeliveryBlock": {
+					"type": "string"
+				},
+				"OrderCreationDate": {
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"Deadline": {
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"Currency": {
+					"type": "string",
+					"minLength": 3,
+					"maxLength": 4
+				},
+				"Taxes": {
+					"type": "number"
+				},
+				"ChannelAcquisitionDate": {
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"CreditBlockDelivery": {
+					"type": "string"
+				},
+				"CreatedBy": {
+					"type": "string"
+				},
+				"NoCheckRDD": {
+					"type": "string"
+				},
+				"NoCheckFillRate": {
+					"type": "string"
+				},
+				"ProfitCentre": {
+					"type": "string"
+				},
+				"Claimable": {
+					"type": "string"
+				},
+				"ATPFlag": {
+					"type": "string"
+				},
+				"BillTo": {
+					"$ref": "#/definitions/object_01"
+				},
+				"Payer": {
+					"$ref": "#/definitions/object_01"
+				},
+				"SoldTo": {
+					"$ref": "#/definitions/object_01"
+				},
+				"ShipTo": {
+					"$ref": "#/definitions/object_01"
+				},
+				"OrderCombination": {
+					"type": "string"
+				},
+				"PricingDate": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"CreditBlockAllocation": {
+					"type": "string"
+				},
+				"OverallStatus": {
+					"type": "string"
+				},
+				"DeliveryStatus": {
+					"type": "string"
+				},
+				"CreditStatus": {
+					"type": "string"
+				},
+				"OveralBlkdStatus": {
+					"type": "string"
+				},
+				"OrderAllocStatus": {
+					"type": "string"
+				},
+				"SalesTag": {
+					"type": "string"
+				},
+				"BillingBlock": {
+					"type": "string"
+				},
+				"POHeaderRoot": {
+					"type": "string"
+				},
+				"DocumentDate": {
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "date"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				},
+				"OrderBrandList": {
+					"$ref": "#/definitions/array_01"
+				},
+				"TotalQuantity": {
+					"type": "number"
+				},
+				"TotalGrossValue": {
+					"type": "number"
+				},
+				"TotalDiscount": {
+					"type": "number"
+				},
+				"TotalNetValue": {
+					"type": "number"
+				},
+				"CaseQuantity": {
+					"type": "number"
+				},
+				"SKUQuantity": {
+					"type": "number"
+				},
+				"IncompleteLog": {
+					"type": "string"
+				},
+				"TotalQuantityPerBrands": {
+					"$ref": "#/definitions/object_02"
+				},
+				"TotalQuantityPerCategories": {
+					"$ref": "#/definitions/object_03"
+				},
+				"AllocatedQty": {
+					"type": "number"
+				},
+				"InDeliveryQty": {
+					"type": "number"
+				},
+				"ShippedQty": {
+					"type": "number"
+				},
+				"RejectedQty": {
+					"type": "number"
+				},
+				"OrderLine": {
+					"$ref": "#/definitions/object_07"
+				},
+				"OrderCreationTime": {
+					"items": false,
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "string",
+							"format": "time"
+						},
+						{
+							"type": "string",
+							"maxLength": 0
+						}
+					]
+				}
+			},
+			"required": [
+				"OrderNumber",
+				"SalesOrg",
+				"DistrChannel",
+				"ShippingCondition",
+				"OrderReason",
+				"OrderType",
+				"POHeader",
+				"InternalPOHeader",
+				"ChannelAcquisitionType",
+				"OrderHeaderStatus",
+				"DeliveryBlock",
+				"OrderCreationDate",
+				"Deadline",
+				"Taxes",
+				"ChannelAcquisitionDate",
+				"CreditBlockDelivery",
+				"CreatedBy",
+				"NoCheckRDD",
+				"NoCheckFillRate",
+				"ProfitCentre",
+				"Claimable",
+				"ATPFlag",
+				"BillTo",
+				"Payer",
+				"SoldTo",
+				"ShipTo",
+				"OrderCombination",
+				"PricingDate",
+				"CreditBlockAllocation",
+				"OverallStatus",
+				"DeliveryStatus",
+				"CreditStatus",
+				"OveralBlkdStatus",
+				"OrderAllocStatus",
+				"SalesTag",
+				"BillingBlock",
+				"POHeaderRoot",
+				"DocumentDate",
+				"OrderBrandList",
+				"TotalQuantity",
+				"TotalGrossValue",
+				"TotalDiscount",
+				"TotalNetValue",
+				"CaseQuantity",
+				"SKUQuantity",
+				"TotalQuantityPerBrands",
+				"TotalQuantityPerCategories",
+				"AllocatedQty",
+				"InDeliveryQty",
+				"ShippedQty",
+				"RejectedQty",
+				"OrderLine",
+				"OrderCreationTime"
+			],
+			"additionalProperties": false
+		},
+		"object_09": {
+			"title": "ns1:details_data",
+			"type": "object",
+			"properties": {
+				"OrderHeader": {
+					"title": "OrderHeader",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/object_08"
+					}
+				}
+			},
+			"required": [
+				"OrderHeader"
+			],
+			"additionalProperties": false
+		},
+		"object_10": {
+			"description": "JSON Schema generated by XMLSpy v2021 rel. 3 (x64) (http://www.altova.com)",
+			"type": "object",
+			"properties": {
+				"ns1:details_data": {
+					"$ref": "#/definitions/object_09"
+				}
+			},
+			"required": [
+				"ns1:details_data"
+			],
+			"additionalProperties": false
+		},
+		"array_01": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		}
+	}
+}
